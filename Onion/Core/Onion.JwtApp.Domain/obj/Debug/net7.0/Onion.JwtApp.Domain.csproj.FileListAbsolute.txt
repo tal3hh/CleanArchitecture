@@ -1,0 +1,12 @@
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\bin\Debug\net7.0\Onion.JwtApp.Domain.deps.json
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\bin\Debug\net7.0\Onion.JwtApp.Domain.dll
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\bin\Debug\net7.0\Onion.JwtApp.Domain.pdb
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\obj\Debug\net7.0\Onion.JwtApp.Domain.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\obj\Debug\net7.0\Onion.JwtApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\obj\Debug\net7.0\Onion.JwtApp.Domain.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\obj\Debug\net7.0\Onion.JwtApp.Domain.AssemblyInfo.cs
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\obj\Debug\net7.0\Onion.JwtApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\obj\Debug\net7.0\Onion.JwtApp.Domain.dll
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\obj\Debug\net7.0\refint\Onion.JwtApp.Domain.dll
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\obj\Debug\net7.0\Onion.JwtApp.Domain.pdb
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Core\Onion.JwtApp.Domain\obj\Debug\net7.0\ref\Onion.JwtApp.Domain.dll
