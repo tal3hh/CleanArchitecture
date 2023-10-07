@@ -54,3 +54,4 @@ C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\De
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\Debug\net7.0\FluentValidation.dll
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\Debug\net7.0\Onion.JwtApp.API.staticwebassets.runtime.json

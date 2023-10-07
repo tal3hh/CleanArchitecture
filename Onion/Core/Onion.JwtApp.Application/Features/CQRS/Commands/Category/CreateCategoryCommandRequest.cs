@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Onion.JwtApp.Application.Features.CQRS.Commands
+namespace Onion.JwtApp.Application.Features.CQRS.Commands.Category
 {
     public class CreateCategoryCommandRequest : IRequest
     {

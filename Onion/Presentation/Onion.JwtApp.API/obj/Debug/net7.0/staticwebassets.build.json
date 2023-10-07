@@ -1,11 +1,71 @@
 {
   "Version": 1,
-  "Hash": "5lQSR+gvpDff4cl233khsGqzvKXe/TfwkKink8Y3BI4=",
+  "Hash": "S8f8gSLKRgG1+fZ9hmXwRi1JgyTwPFfhfgLrmzM9Q5M=",
   "Source": "Onion.JwtApp.API",
   "BasePath": "_content/Onion.JwtApp.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Onion.JwtApp.API\\wwwroot",
+      "Source": "Onion.JwtApp.API",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\",
+      "BasePath": "_content/Onion.JwtApp.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png",
+      "SourceId": "Onion.JwtApp.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\",
+      "BasePath": "_content/Onion.JwtApp.API",
+      "RelativePath": "FoodImages/11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FoodImages\\11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png",
+      "SourceId": "Onion.JwtApp.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\",
+      "BasePath": "_content/Onion.JwtApp.API",
+      "RelativePath": "FoodImages/8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FoodImages\\8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png",
+      "SourceId": "Onion.JwtApp.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\",
+      "BasePath": "_content/Onion.JwtApp.API",
+      "RelativePath": "FoodImages/a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FoodImages\\a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png"
+    }
+  ]
 }

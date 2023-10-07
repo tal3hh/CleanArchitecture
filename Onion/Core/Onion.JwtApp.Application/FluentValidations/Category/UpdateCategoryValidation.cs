@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Onion.JwtApp.Application.Features.CQRS.Commands;
+using Onion.JwtApp.Application.Features.CQRS.Commands.Category;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png",
+      "PackagePath": "staticwebassets\\FoodImages\\11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png",
+      "PackagePath": "staticwebassets\\FoodImages\\8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png",
+      "PackagePath": "staticwebassets\\FoodImages\\a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Onion.JwtApp.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Onion.JwtApp.API.props",
+      "PackagePath": "build\\Onion.JwtApp.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Onion.JwtApp.API.props",
+      "PackagePath": "buildMultiTargeting\\Onion.JwtApp.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Onion.JwtApp.API.props",
+      "PackagePath": "buildTransitive\\Onion.JwtApp.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

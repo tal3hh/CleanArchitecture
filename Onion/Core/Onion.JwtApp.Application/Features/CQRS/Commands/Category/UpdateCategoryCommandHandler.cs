@@ -1,16 +1,15 @@
 ﻿using MediatR;
-using Onion.JwtApp.Application.Features.CQRS.Commands;
 using Onion.JwtApp.Application.Interfaces;
 using Onion.JwtApp.Domain.Entities;
 
 
-namespace Onion.JwtApp.Application.Features.CQRS.Handlers
+namespace Onion.JwtApp.Application.Features.CQRS.Commands.Category
 {
     public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommandRequest>
     {
-        private readonly IRepository<Category> _repo;
+        private readonly IRepository<Onion.JwtApp.Domain.Entities.Category> _repo;
 
-        public UpdateCategoryCommandHandler(IRepository<Category> repo)
+        public UpdateCategoryCommandHandler(IRepository<Onion.JwtApp.Domain.Entities.Category> repo)
         {
             _repo = repo;
         }
@@ -21,7 +20,7 @@ namespace Onion.JwtApp.Application.Features.CQRS.Handlers
 
             if (unchange != null)
             {
-                var entity = new Category
+                var entity = new Onion.JwtApp.Domain.Entities.Category
                 {
                     Id = request.Id,
                     Name = request.Name,

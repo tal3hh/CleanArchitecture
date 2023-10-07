@@ -1,0 +1,52 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\FoodImages\11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Onion.JwtApp.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Onion.JwtApp.API</BasePath>
+      <RelativePath>FoodImages/11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\FoodImages\11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\FoodImages\8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Onion.JwtApp.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Onion.JwtApp.API</BasePath>
+      <RelativePath>FoodImages/8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\FoodImages\8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\FoodImages\a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Onion.JwtApp.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Onion.JwtApp.API</BasePath>
+      <RelativePath>FoodImages/a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\FoodImages\a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

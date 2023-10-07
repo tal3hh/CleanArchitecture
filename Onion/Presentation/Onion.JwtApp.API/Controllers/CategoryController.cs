@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Onion.JwtApp.Application.Features.CQRS.Commands;
-using Onion.JwtApp.Application.Features.CQRS.Queries;
+using Onion.JwtApp.Application.Features.CQRS.Commands.Category;
+using Onion.JwtApp.Application.Features.CQRS.Queries.Category;
 
 namespace Onion.JwtApp.API.Controllers
 {
@@ -60,13 +60,6 @@ namespace Onion.JwtApp.API.Controllers
             await _mediatr.Send(new RemoveCategoryCommandRequest(id));
 
             return Ok("Removed data...");
-        }
-
-
-        [HttpPost]
-        public async Task<IActionResult> Upload(int id,IFormFile file)
-        {
-            return Ok();
         }
     }
 }

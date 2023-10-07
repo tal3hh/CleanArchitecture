@@ -20,4 +20,8 @@
     <ProjectReference Include="..\..\Infrastructure\Onion.JwtApp.Persistance\Onion.JwtApp.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\FoodImages\" />
+  </ItemGroup>
+
 </Project>
