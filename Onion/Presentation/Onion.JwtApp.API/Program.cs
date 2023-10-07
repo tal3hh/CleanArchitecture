@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 #region Service Registration
 
-builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices(builder.Configuration);
+
 builder.Services.AddPersistanceServices(builder.Configuration);
 
 #endregion
@@ -28,7 +29,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+app.UseHttpsRedirection();
+
 app.UseStaticFiles();
+app.UseRouting();
+
+app.UseResponseCaching();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

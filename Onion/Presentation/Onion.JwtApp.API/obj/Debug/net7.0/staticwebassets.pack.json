@@ -1,16 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png",
-      "PackagePath": "staticwebassets\\FoodImages\\11880169-2698-4236-bcef-7d6828d4f313_Screenshot (13).png"
-    },
-    {
-      "Id": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png",
-      "PackagePath": "staticwebassets\\FoodImages\\8df7bcc4-c076-413b-a314-0a0a37a414ab_Screenshot (8).png"
-    },
-    {
-      "Id": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png",
-      "PackagePath": "staticwebassets\\FoodImages\\a7f2418b-5c9d-4782-9fff-d21da278af15_Screenshot (12).png"
+      "Id": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\69b5bec7-4419-4327-a316-c81cc7d799e1_Screenshot (9).png",
+      "PackagePath": "staticwebassets\\FoodImages\\69b5bec7-4419-4327-a316-c81cc7d799e1_Screenshot (9).png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Onion.JwtApp.API.Microsoft.AspNetCore.StaticWebAssets.props",
