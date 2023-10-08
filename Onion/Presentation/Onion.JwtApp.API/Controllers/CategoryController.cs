@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Onion.JwtApp.Application.Features.CQRS.Commands.Category;
@@ -6,6 +7,7 @@ using Onion.JwtApp.Application.Features.CQRS.Queries.Category;
 
 namespace Onion.JwtApp.API.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
@@ -17,7 +19,7 @@ namespace Onion.JwtApp.API.Controllers
             _mediatr = mediatro;
         }
 
-
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {

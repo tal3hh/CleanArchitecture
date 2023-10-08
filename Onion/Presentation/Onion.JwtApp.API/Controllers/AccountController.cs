@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,6 @@ namespace Onion.JwtApp.API.Controllers
         {
             _mediator = mediator;
         }
-
 
 
         [HttpPost("Register")]
@@ -48,6 +48,13 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(list);
         }
 
+        [HttpDelete("User/{IdorEmail}")]
+        public async Task<IActionResult> UserDelete(string IdorEmail)
+        {
+            await _mediator.Send(new RemoveUserCommandRequest(IdorEmail));
+
+            return Ok();
+        }
 
         [HttpGet("Roles")]
         public async Task<IActionResult> AllRoles()
@@ -57,12 +64,22 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(list);
         }
 
+        [Authorize]
         [HttpPost("Role")]
         public async Task<IActionResult> CreateRole(CreateRoleCommandRequest request)
         {
             if (!ModelState.IsValid) return BadRequest();
 
             await _mediator.Send(request);
+
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpDelete("Role/{name}")]
+        public async Task<IActionResult> DeleteRole(string name)
+        {
+            await _mediator.Send(new RemoveRoleCommandRequest(name));
 
             return Ok();
         }

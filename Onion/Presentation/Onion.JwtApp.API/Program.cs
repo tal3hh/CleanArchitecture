@@ -3,7 +3,10 @@ using Onion.JwtApp.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 builder.Services.AddControllers();
+
 
 #region Service Registration
 
@@ -12,8 +15,6 @@ builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddPersistanceServices(builder.Configuration);
 
 #endregion
-
-
 
 
 
