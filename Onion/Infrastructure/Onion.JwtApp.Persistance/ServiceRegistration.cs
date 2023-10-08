@@ -44,6 +44,8 @@ namespace Onion.JwtApp.Persistance
 
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
             #endregion
+
+
         }
     }
 }

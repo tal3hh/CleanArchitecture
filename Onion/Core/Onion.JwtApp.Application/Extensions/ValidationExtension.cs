@@ -1,8 +1,10 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using Onion.JwtApp.Application.Features.CQRS.Commands.Account;
 using Onion.JwtApp.Application.Features.CQRS.Commands.Category;
 using Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages;
 using Onion.JwtApp.Application.Features.CQRS.Commands.Foods;
+using Onion.JwtApp.Application.FluentValidations.Account;
 using Onion.JwtApp.Application.FluentValidations.Category;
 using Onion.JwtApp.Application.FluentValidations.FoodImages;
 using Onion.JwtApp.Application.FluentValidations.Foods;
@@ -25,6 +27,9 @@ namespace Onion.JwtApp.Application.Extensions
             services.AddScoped<IValidator<UpdateFoodCommandRequest>, UpdateFoodValidation>();
 
             services.AddScoped<IValidator<CreateFoodImageCommandRequest>, CreateFoodImageValidation>();
+
+            services.AddScoped<IValidator<CreateUserCommandRequest>, CreateUserValidation>();
+            services.AddScoped<IValidator<CreateRoleCommandRequest>, CreateRoleValidation>();
         }
     }
 }

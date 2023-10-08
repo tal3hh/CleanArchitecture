@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using Onion.JwtApp.Application.Dtos.Account;
 using Onion.JwtApp.Application.Dtos.Category;
 using Onion.JwtApp.Application.Dtos.FoodImages;
 using Onion.JwtApp.Application.Dtos.Foods;
@@ -25,6 +27,9 @@ namespace Onion.JwtApp.Application.AutoMapper
             CreateMap<FoodImage, FoodImageDto>()
                    .ForMember(x => x.FoodName, y => y.MapFrom(z => z.Food.Name));
             CreateMap<FoodImageDto, FoodImage>();
+
+            CreateMap<IdentityRole, RoleDto>().ReverseMap();
+            CreateMap<AppUser, UserDto>().ReverseMap();
         }
     }
 }

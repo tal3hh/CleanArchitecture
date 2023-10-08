@@ -10,6 +10,6 @@ namespace Onion.JwtApp.Domain.Entities
     public class AppUser : IdentityUser
     {
         public string? Fullname { get; set; }
-        public DateTime CreateDate { get; set; } = DateTime.Now;
+        public DateTime CreateDate { get; set; }
     } 
 }
