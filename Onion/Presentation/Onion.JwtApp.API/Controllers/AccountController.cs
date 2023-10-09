@@ -24,9 +24,9 @@ namespace Onion.JwtApp.API.Controllers
         [HttpPost("Register")]
         public async Task<IActionResult> Register(CreateUserCommandRequest request)
         {
-            await _mediator.Send(request);
+            var response = await _mediator.Send(request);
 
-            return Ok();
+            return Ok(response);
         }
 
 
@@ -35,9 +35,9 @@ namespace Onion.JwtApp.API.Controllers
         {
             if(!ModelState.IsValid) return BadRequest();
 
-            var token = await _mediator.Send(request);
+            var response = await _mediator.Send(request);
 
-            return Ok(token);
+            return Ok(response);
         }
 
         [HttpGet("Users")]
@@ -51,9 +51,9 @@ namespace Onion.JwtApp.API.Controllers
         [HttpDelete("User/{IdorEmail}")]
         public async Task<IActionResult> UserDelete(string IdorEmail)
         {
-            await _mediator.Send(new RemoveUserCommandRequest(IdorEmail));
+            var response = await _mediator.Send(new RemoveUserCommandRequest(IdorEmail));
 
-            return Ok();
+            return Ok(response);
         }
 
         [HttpGet("Roles")]
@@ -79,9 +79,9 @@ namespace Onion.JwtApp.API.Controllers
         [HttpDelete("Role/{name}")]
         public async Task<IActionResult> DeleteRole(string name)
         {
-            await _mediator.Send(new RemoveRoleCommandRequest(name));
+            var response = await _mediator.Send(new RemoveRoleCommandRequest(name));
 
-            return Ok();
+            return Ok(response);
         }
     }
 }

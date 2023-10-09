@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Onion.JwtApp.Application.Common;
 using Onion.JwtApp.Application.Interfaces;
 using Onion.JwtApp.Domain.Entities;
 using System;
@@ -17,17 +18,18 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.Foods
         {
             _repo = repo;
         }
-        public async Task Handle(CreateFoodCommandRequest request, CancellationToken cancellationToken)
-        {
-            var entity = new Food
-            {
-                Name = request.Name,
-                Definition = request.Definition,
-                Price = request.Price,
-                CategoryId = request.CategoryId
-            };
 
-            await _repo.CreateAsync(entity);
-        }
+       public async Task Handle(CreateFoodCommandRequest request, CancellationToken cancellationToken)
+       {
+           var entity = new Food
+           {
+               Name = request.Name,
+               Definition = request.Definition,
+               Price = request.Price,
+               CategoryId = request.CategoryId
+           };
+
+           await _repo.CreateAsync(entity);
+       }
     }
 }

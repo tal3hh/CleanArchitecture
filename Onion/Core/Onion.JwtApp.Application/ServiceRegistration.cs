@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Onion.JwtApp.Application.AutoMapper;
+using Onion.JwtApp.Application.Common;
 using Onion.JwtApp.Application.Extensions;
 using Onion.JwtApp.Application.Services;
 using Onion.JwtApp.Application.Services.Interface;

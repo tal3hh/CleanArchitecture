@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Onion.JwtApp.Application.Common;
 using Onion.JwtApp.Application.Dtos.Account;
 using Onion.JwtApp.Application.Services.Interface;
 using Onion.JwtApp.Domain.Entities;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Onion.JwtApp.Application.Features.CQRS.Commands.Account
 {
-    public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, TokenResponseDto>
+    public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, IResponse<TokenResponseDto>>
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
@@ -22,9 +23,8 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.Account
             _tokenService = tokenService;
         }
 
-        public async Task<TokenResponseDto> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
+        public async Task<IResponse<TokenResponseDto>> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
         {
-
             if (request.EmailorUsername != null)
             {
                 var user = new AppUser();
@@ -35,22 +35,53 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.Account
 
                 if (user != null && request.Password != null && user.UserName != null)
                 {
-                    if (await _userManager.CheckPasswordAsync(user,request.Password))
+                    if (await _userManager.CheckPasswordAsync(user, request.Password))
                     {
                         var roles = await _userManager.GetRolesAsync(user);
 
                         var token = _tokenService.GenerateJwtToken(user.UserName, (List<string>)roles);
 
-                        return token;
+                        return new Response<TokenResponseDto>("200", token);
                     }
 
-                    throw new UnauthorizedAccessException();
+                    return new Response<TokenResponseDto>("401", new TokenResponseDto("Token is null", DateTime.UtcNow.AddDays(1)), "Unauthorized");
                 }
 
-                throw new NullReferenceException();
+                return new Response<TokenResponseDto>("404", new TokenResponseDto("Token is null", DateTime.UtcNow.AddDays(1)),"User is null");
             }
 
-            throw new NullReferenceException();
+            return new Response<TokenResponseDto>("404", new TokenResponseDto("Token is null", DateTime.UtcNow.AddDays(1)));
         }
+
+        //public async Task<TokenResponseDto> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
+        //{
+
+        //    if (request.EmailorUsername != null)
+        //    {
+        //        var user = new AppUser();
+
+        //        user = await _userManager.FindByEmailAsync(request.EmailorUsername);
+        //        if (user == null)
+        //            user = await _userManager.FindByNameAsync(request.EmailorUsername);
+
+        //        if (user != null && request.Password != null && user.UserName != null)
+        //        {
+        //            if (await _userManager.CheckPasswordAsync(user,request.Password))
+        //            {
+        //                var roles = await _userManager.GetRolesAsync(user);
+
+        //                var token = _tokenService.GenerateJwtToken(user.UserName, (List<string>)roles);
+
+        //                return token;
+        //            }
+
+        //            throw new UnauthorizedAccessException();
+        //        }
+
+        //        throw new NullReferenceException();
+        //    }
+
+        //    throw new NullReferenceException();
+        //}
     }
 }

@@ -9,15 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{61130785-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{244D0B02-96A8-4081-A4AA-4573740732E8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistance", "Persistance", "{5DDB645F-790A-4D75-A1B5-FA7963CD8DCC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{5DDB645F-790A-4D75-A1B5-FA7963CD8DCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.JwtApp.Domain", "Onion\Core\Onion.JwtApp.Domain\Onion.JwtApp.Domain.csproj", "{DF88B1FE-BF7E-4B47-A274-E92CFE6CEE99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.JwtApp.Domain", "Onion\Core\Onion.JwtApp.Domain\Onion.JwtApp.Domain.csproj", "{DF88B1FE-BF7E-4B47-A274-E92CFE6CEE99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.JwtApp.Application", "Onion\Core\Onion.JwtApp.Application\Onion.JwtApp.Application.csproj", "{2E7639E2-A376-4E9B-A401-7546EF30EC55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.JwtApp.Application", "Onion\Core\Onion.JwtApp.Application\Onion.JwtApp.Application.csproj", "{2E7639E2-A376-4E9B-A401-7546EF30EC55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.JwtApp.Persistance", "Onion\Infrastructure\Onion.JwtApp.Persistance\Onion.JwtApp.Persistance.csproj", "{9FC9F424-E622-4B1B-BCC2-DDB64F731D3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.JwtApp.Persistance", "Onion\Infrastructure\Onion.JwtApp.Persistance\Onion.JwtApp.Persistance.csproj", "{9FC9F424-E622-4B1B-BCC2-DDB64F731D3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.JwtApp.API", "Onion\Presentation\Onion.JwtApp.API\Onion.JwtApp.API.csproj", "{529AF4E7-A4DB-4871-8B9F-7A7CEE804C1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.JwtApp.API", "Onion\Presentation\Onion.JwtApp.API\Onion.JwtApp.API.csproj", "{529AF4E7-A4DB-4871-8B9F-7A7CEE804C1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

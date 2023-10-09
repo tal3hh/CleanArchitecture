@@ -42,7 +42,7 @@ namespace Onion.JwtApp.API.Controllers
 
             await _mediator.Send(request);
 
-            return Ok("Data create...");
+            return Ok();
 
         }
 
