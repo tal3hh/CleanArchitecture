@@ -9,7 +9,6 @@ namespace Onion.JwtApp.WebApp.Areas.AdminPanel.Controllers
     [Area("AdminPanel")]
     public class CategoryController : Controller
     {
-        //private readonly IHttpClientFactory _httpClientFactory;
         readonly ICategoryService _categoryService;
 
         public CategoryController(ICategoryService categoryService)

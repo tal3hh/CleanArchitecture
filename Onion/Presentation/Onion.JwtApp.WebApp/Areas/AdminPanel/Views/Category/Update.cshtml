@@ -5,13 +5,13 @@
     <div class="col-12 grid-margin">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Category Update</h4> <br />
+                <h4 class="card-title">Kateqoriya Yenile</h4> <br />
                 <hr />
                 <form asp-action="Update" asp-controller="Category" class="form-sample" method="post">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Name :</label>
+                                <label class="col-sm-3 col-form-label">Kateqoriya :</label>
                                 <div class="col-sm-9">
                                     <input asp-for="Name" type="text" class="form-control" placeholder="Name" />
                                     <span asp-validation-for="Name" class="text-danger"></span>
@@ -19,8 +19,8 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success mr-2">Submit</button>
-                    <a asp-action="List" asp-controller="Category" class="btn btn-light">Cancel</a>
+                    <button type="submit" class="btn btn-success mr-2">Yenile</button>
+                    <a asp-action="List" asp-controller="Category" class="btn btn-light">Geri</a>
                 </form>
             </div>
         </div>

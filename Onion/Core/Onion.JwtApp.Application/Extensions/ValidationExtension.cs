@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using Onion.JwtApp.Application.Dtos.Category;
 using Onion.JwtApp.Application.Features.CQRS.Commands.Account;
 using Onion.JwtApp.Application.Features.CQRS.Commands.Category;
 using Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages;

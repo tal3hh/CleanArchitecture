@@ -1,5 +1,9 @@
 using Onion.JwtApp.Application.Services.Interface;
 using Onion.JwtApp.Application.Services;
+using FluentValidation;
+using Onion.JwtApp.Application.Dtos.Category;
+using Onion.JwtApp.Application.FluentValidations.Category;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +13,12 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IFoodService, FoodService>();
 
+builder.Services.AddScoped<IValidator<CategoryCreateDto>, CreateCategoryDtoValidation>();
+builder.Services.AddScoped<IValidator<CategoryDto>, UpdateCategoryDtoValidation>();
+
+builder.Services.AddFluentValidationAutoValidation();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
