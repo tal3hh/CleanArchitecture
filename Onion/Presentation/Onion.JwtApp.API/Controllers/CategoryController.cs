@@ -51,17 +51,17 @@ namespace Onion.JwtApp.API.Controllers
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            await _mediatr.Send(request);
+            var response = await _mediatr.Send(request);
 
-            return Ok("Updated data...");
+            return Ok(response);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Remove(int id)
         {
-            await _mediatr.Send(new RemoveCategoryCommandRequest(id));
+            var response =  await _mediatr.Send(new RemoveCategoryCommandRequest(id));
 
-            return Ok("Removed data...");
+            return Ok(response);
         }
     }
 }

@@ -69,3 +69,4 @@ C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\De
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.API\bin\Debug\net7.0\Newtonsoft.Json.dll

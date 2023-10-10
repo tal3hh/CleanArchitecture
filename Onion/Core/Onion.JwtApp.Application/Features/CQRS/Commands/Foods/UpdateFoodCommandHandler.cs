@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Onion.JwtApp.Application.Common;
 using Onion.JwtApp.Application.Interfaces;
 using Onion.JwtApp.Domain.Entities;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Onion.JwtApp.Application.Features.CQRS.Commands.Foods
 {
-    public class UpdateFoodCommandHandler : IRequestHandler<UpdateFoodCommandRequest>
+    public class UpdateFoodCommandHandler : IRequestHandler<UpdateFoodCommandRequest,IResponse>
     {
         private readonly IRepository<Food> _repo;
 
@@ -17,7 +18,8 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.Foods
         {
             _repo = repo;
         }
-        public async Task Handle(UpdateFoodCommandRequest request, CancellationToken cancellationToken)
+
+        public async Task<IResponse> Handle(UpdateFoodCommandRequest request, CancellationToken cancellationToken)
         {
             var unchange = await _repo.FindAsync(request.Id);
 
@@ -33,7 +35,29 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.Foods
                 };
 
                 await _repo.Update(entity, unchange);
+
+                return new Response("200", "Entity update");
             }
+
+            return new Response("404", "Entity not found");
         }
+        //public async Task Handle(UpdateFoodCommandRequest request, CancellationToken cancellationToken)
+        //{
+        //    var unchange = await _repo.FindAsync(request.Id);
+
+        //    if (unchange != null)
+        //    {
+        //        var entity = new Food
+        //        {
+        //            Id = request.Id,
+        //            Name = request.Name,
+        //            Definition = request.Definition,
+        //            Price = request.Price,
+        //            CategoryId = request.CategoryId
+        //        };
+
+        //        await _repo.Update(entity, unchange);
+        //    }
+        //}
     }
 }

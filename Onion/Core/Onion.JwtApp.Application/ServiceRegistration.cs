@@ -40,6 +40,7 @@ namespace Onion.JwtApp.Application
                 });
             });
 
+
             service.AddAuthentication();
             service.AddAuthorization();
 
@@ -49,7 +50,6 @@ namespace Onion.JwtApp.Application
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
             
-
             #region Configure
             service.ConfigureApplicationCookie(opt =>
             {

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Hosting;
+using Onion.JwtApp.Application.Common;
 using Onion.JwtApp.Application.Interfaces;
 using Onion.JwtApp.Domain.Entities;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
 {
-    public class CreateFoodImageCommandHandler : IRequestHandler<CreateFoodImageCommandRequest>
+    public class CreateFoodImageCommandHandler : IRequestHandler<CreateFoodImageCommandRequest,IResponse>
     {
         private readonly IRepository<FoodImage> _repo;
         private readonly IRepository<Food> _repoFood;
@@ -23,36 +24,45 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
             _repoFood = repoFood;
         }
 
-        public async Task Handle(CreateFoodImageCommandRequest request, CancellationToken cancellationToken)
+        public async Task<IResponse> Handle(CreateFoodImageCommandRequest request, CancellationToken cancellationToken)
         {
-            var Food = await _repoFood.FindAsync(request.FoodId);
-
-            if (Food != null && request.Photos != null)
+            if (request.Photos != null)
             {
-                foreach (var photo in request.Photos)
+                var Food = await _repoFood.FindAsync(request.FoodId);
+
+                if (Food != null)
                 {
-                    if (photo.ContentType.Contains("image/"))
+                    var notimage = 0;
+                    foreach (var photo in request.Photos)
                     {
-                        string fileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
-                        string path = Path.Combine(_env.WebRootPath, "FoodImages", fileName);
-
-                        using (FileStream stream = new FileStream(path, FileMode.Create))
+                        if (photo.ContentType.Contains("image/"))
                         {
-                            await photo.CopyToAsync(stream);
+                            string fileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+                            string path = Path.Combine(_env.WebRootPath, "FoodImages", fileName);
+
+                            using (FileStream stream = new FileStream(path, FileMode.Create))
+                            {
+                                await photo.CopyToAsync(stream);
+                            }
+
+                            var FoodImage = new FoodImage
+                            {
+                                Image = fileName,
+                                FoodId = request.FoodId
+                            };
+
+                            await _repo.CreateAsync(FoodImage);
                         }
-
-                        var FoodImage = new FoodImage
+                        else
                         {
-                            Image = fileName,
-                            FoodId = request.FoodId
-                        };
-
-
-                        await _repo.CreateAsync(FoodImage);
+                            notimage++;
+                        }
                     }
+                    return new Response("200", $"Photo count:{request.Photos.Count()}, Images add: {request.Photos.Count()-notimage}, No image type: {notimage}");
                 }
+                return new Response("404", "Entity is null");
             }
-
+            return new Response("404", "Photo is null");
         }
     }
 }

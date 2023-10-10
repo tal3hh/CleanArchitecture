@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\589cc906-69f0-4b0f-9ce3-6ad24bd3b08e_Screenshot (11).png",
+      "PackagePath": "staticwebassets\\FoodImages\\589cc906-69f0-4b0f-9ce3-6ad24bd3b08e_Screenshot (11).png"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\69b5bec7-4419-4327-a316-c81cc7d799e1_Screenshot (9).png",
       "PackagePath": "staticwebassets\\FoodImages\\69b5bec7-4419-4327-a316-c81cc7d799e1_Screenshot (9).png"
     },

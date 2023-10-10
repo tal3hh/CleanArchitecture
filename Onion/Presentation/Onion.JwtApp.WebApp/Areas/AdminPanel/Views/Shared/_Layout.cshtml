@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Label - Premium Responsive Bootstrap 4 Admin & Dashboard Template</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/AdminPanel/tampledash/assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
+    <!-- endinject -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/AdminPanel/tampledash/assets/css/shared/style.css">
+    <!-- endinject -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
+        <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z" />
+    </svg>
+    <!-- Layout style -->
+    <link rel="stylesheet" href="~/AdminPanel/tampledash/assets/css/demo_1/style.css">
+    <!-- Layout style -->
+    <link rel="shortcut icon" href="~/AdminPanel/tampledash/asssets/images/favicon.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+
+
+<body class="header-fixed">
+    <!-- partial:partials/_header.html -->
+    <nav class="t-header">
+        <div class="t-header-brand-wrapper">
+            <a asp-action="Index" asp-controller="Home">
+                <h3 class="text-dark">VTP'23</h3>
+            </a>
+        </div>
+        <div class="t-header-content-wrapper" style="background-color: #c5c8cc">
+            <div class="t-header-content">
+                <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+                <form action="#" class="t-header-search-box">
+                    @RenderSection("search",false)
+                </form>
+
+            </div>
+        </div>
+    </nav>
+    <!-- partial -->
+    <div class="page-body">
+
+
+        <!-- partial:partials/_sidebar.html -->
+
+
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="info-wrapper">
+                    @{
+                        if (User.Identity.IsAuthenticated)
+                        {
+                            <h6 class="display-income">@User.Identity.Name</h6>
+                        }
+                    }
+                </div>
+            </div>
+            <ul class="navigation-menu">
+                <li class="nav-category-divider">MAIN</li>
+                <li>
+                    <a asp-action="Index" asp-controller="Dashboard">
+                        <span class="link-title" style="color:black">Dashboard</span>
+                        <i class="mdi mdi-gauge link-icon"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a asp-action="List" asp-controller="Category">
+                        <span class="link-title" style="color:black">Categories</span>
+                        <i class="mdi mdi-gauge link-icon"></i>
+                    </a>
+                </li>
+
+                <!-- Department -->
+
+                <li>
+                    <a asp-action="List" asp-controller="Food">
+                        <span class="link-title" style="color:black">Foods</span>
+                        <i class="mdi mdi-gauge link-icon"></i>
+                    </a>
+                </li>
+                @*<li>
+                    <a href="#ui-elements" data-toggle="collapse" aria-expanded="false">
+                        <span class="link-title">Foods</span>
+                        <i class="mdi mdi-bullseye link-icon"></i>
+                    </a>
+                    <ul class="collapse navigation-submenu" id="ui-elements">
+                        <li>
+                            <a asp-action="List" asp-controller="ALL">ALL</a>
+                        </li>
+                        <li>
+                            <a asp-action="List" asp-controller="IT">IT Web</a>
+                        </li>
+                        <li>
+                            <a asp-action="List" asp-controller="RM">RM</a>
+                        </li>
+                        <li>
+                            <a asp-action="List" asp-controller="ACC">ACC</a>
+                        </li>
+                        <li>
+                            <a asp-action="List" asp-controller="LP">LP</a>
+                        </li>
+                        <li>
+                            <a asp-action="List" asp-controller="HR">HR</a>
+                        </li>
+                        <li>
+                            <a asp-action="List" asp-controller="IM">IM</a>
+                        </li>
+                    </ul>
+                </li>*@
+
+                <!-- CHART -->
+                <li>
+                    <a asp-action="List" asp-controller="Contact">
+                        <span class="link-title" style="color:black">Contact</span>
+                        <i class="mdi mdi-chart-donut link-icon"></i>
+                    </a>
+                </li>
+
+                @*@{
+                    if (!User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            <a asp-action="Login" asp-controller="Account">
+                                <span class="link-title">Login</span>
+                                <i class="mdi mdi-chart-donut link-icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-action="Register" asp-controller="Account">
+                                <span class="link-title">Register</span>
+                                <i class="mdi mdi-chart-donut link-icon"></i>
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a asp-action="LogOut" asp-controller="Account">
+                                <span class="link-title">LogOut</span>
+                                <i class="mdi mdi-chart-donut link-icon"></i>
+                            </a>
+                        </li>
+                    }
+                }*@
+
+
+
+
+            </ul>
+        </div>
+
+        <div class="page-content-wrapper" style="background-color: #c5c8cc">
+
+
+            @RenderBody()
+
+
+            <footer class="footer">
+                <div class="row">
+                    <div class="col-sm-6 text-center text-sm-right order-sm-1">
+                        <ul class="text-gray">
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
+                        <small class="text-muted d-block">Copyright © 2019 <a href="http://www.uxcandy.co" target="_blank">UXCANDY</a>. All rights reserved</small>
+                        <small class="text-gray mt-2">Handcrafted With <i class="mdi mdi-heart text-danger"></i></small>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!--page body ends -->
+    <!-- SCRIPT LOADING START FORM HERE /////////////-->
+    <!-- plugins:js -->
+    <script src="~/AdminPanel/tampledash/assets/vendors/js/core.js"></script>
+    <!-- endinject -->
+    <!-- Vendor Js For This Page Ends-->
+    <script src="~/AdminPanel/tampledash/assets/vendors/apexcharts/apexcharts.min.js"></script>
+    <script src="~/AdminPanel/tampledash/assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="~/AdminPanel/tampledash/assets/js/charts/chartjs.addon.js"></script>
+    <!-- Vendor Js For This Page Ends-->
+    <!-- build:js -->
+    <script src="~/AdminPanel/tampledash/assets/js/template.js"></script>
+    <script src="~/AdminPanel/tampledash/assets/js/dashboard.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

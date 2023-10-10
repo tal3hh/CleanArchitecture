@@ -36,46 +36,40 @@ namespace Onion.JwtApp.API.Controllers
                 Photos = photos
             };
 
-            await _mediator.Send(request);
+            var response = await _mediator.Send(request);
 
-            return Ok();
+            return Ok(response);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(IFormFile photo, int id)
         {
-            if (photo == null) return BadRequest();
-
             var request = new UpdateFoodImageCommandRequest
             {
                 Id = id,
                 Photo = photo
             };
 
-            await _mediator.Send(request);
+            var response = await _mediator.Send(request);
 
-            return Ok();
+            return Ok(response);
         }
 
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Remove(int id)
         {
-            if (id == 0) return BadRequest();
+            var response = await _mediator.Send(new RemoveFoodImageCommandRequest(id));
 
-            await _mediator.Send(new RemoveFoodImageCommandRequest(id));
-
-            return Ok();
+            return Ok(response);
         }
 
         [HttpDelete("Multi/{FoodId}")]
         public async Task<IActionResult> AllRemove(int FoodId)
         {
-            if (FoodId == 0) return BadRequest();
+            var response = await _mediator.Send(new RemoveFoodImagesCommandRequest(FoodId));
 
-            await _mediator.Send(new RemoveFoodImagesCommandRequest(FoodId));
-
-            return Ok();
+            return Ok(response);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Hosting;
+using Onion.JwtApp.Application.Common;
 using Onion.JwtApp.Application.Interfaces;
 using Onion.JwtApp.Domain.Entities;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
 {
-    public class RemoveFoodImageCommandHandler : IRequestHandler<RemoveFoodImageCommandRequest>
+    public class RemoveFoodImageCommandHandler : IRequestHandler<RemoveFoodImageCommandRequest,IResponse>
     {
         private readonly IRepository<FoodImage> _repo;
         private readonly IWebHostEnvironment _env;
@@ -21,7 +22,7 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
             _env = env;
         }
 
-        public async Task Handle(RemoveFoodImageCommandRequest request, CancellationToken cancellationToken)
+        public async Task<IResponse> Handle(RemoveFoodImageCommandRequest request, CancellationToken cancellationToken)
         {
             var entity = await _repo.FindAsync(request.Id);
 
@@ -35,7 +36,27 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
                 }
 
                 await _repo.Remove(entity);
+                return new Response("200", "Entity remove");
             }
+
+            return new Response("404", "Entity not found");
         }
+
+        //public async Task Handle(RemoveFoodImageCommandRequest request, CancellationToken cancellationToken)
+        //{
+        //    var entity = await _repo.FindAsync(request.Id);
+
+        //    if (entity != null)
+        //    {
+        //        var path = Path.Combine(_env.WebRootPath, "FoodImages", entity.Image);
+
+        //        if (File.Exists(path))
+        //        {
+        //            File.Delete(path);
+        //        }
+
+        //        await _repo.Remove(entity);
+        //    }
+        //}
     }
 }

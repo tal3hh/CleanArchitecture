@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Hosting;
+using Onion.JwtApp.Application.Common;
 using Onion.JwtApp.Application.Interfaces;
 using Onion.JwtApp.Domain.Entities;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
 {
-    public class RemoveFoodImagesCommandHandler : IRequestHandler<RemoveFoodImagesCommandRequest>
+    public class RemoveFoodImagesCommandHandler : IRequestHandler<RemoveFoodImagesCommandRequest, IResponse>
     {
         private readonly IRepository<FoodImage> _repo;
         private readonly IWebHostEnvironment _env;
@@ -21,12 +22,13 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
             _env = env;
         }
 
-        public async Task Handle(RemoveFoodImagesCommandRequest request, CancellationToken cancellationToken)
+        public async Task<IResponse> Handle(RemoveFoodImagesCommandRequest request, CancellationToken cancellationToken)
         {
             var list = await _repo.AllFilterAsync(x => x.FoodId == request.FoodId);
 
             if (list.Count() > 0)
             {
+                var notexists = 0;
                 foreach (var item in list)
                 {
                     var path = Path.Combine(_env.WebRootPath, "FoodImages", item.Image);
@@ -35,10 +37,37 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
                     {
                         File.Delete(path);
                     }
+                    else
+                    {
+                        notexists++;
+                    }
 
                     await _repo.Remove(item);
+                    return new Response("200", $"Images removed, Exists not image count:{notexists}");
                 }
             }
+
+            return new Response("404", "Select image");
         }
+
+        //public async Task Handle(RemoveFoodImagesCommandRequest request, CancellationToken cancellationToken)
+        //{
+        //    var list = await _repo.AllFilterAsync(x => x.FoodId == request.FoodId);
+
+        //    if (list.Count() > 0)
+        //    {
+        //        foreach (var item in list)
+        //        {
+        //            var path = Path.Combine(_env.WebRootPath, "FoodImages", item.Image);
+
+        //            if (File.Exists(path))
+        //            {
+        //                File.Delete(path);
+        //            }
+
+        //            await _repo.Remove(item);
+        //        }
+        //    }
+        //}
     }
 }
