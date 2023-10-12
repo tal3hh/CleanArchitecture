@@ -10,9 +10,10 @@ namespace Onion.JwtApp.Application.Services.Interface
     public interface ICategoryService
     {
         Task<List<CategoryDto>?> GetAllAsync();
-        Task<HttpResponseMessage> CreateAsync(CategoryCreateDto dto);
+
+		Task<HttpResponseMessage> CreateAsync(CategoryCreateDto dto, string token);
         Task<CategoryDto?> GetById(int id);
-        Task<HttpResponseMessage> UpdateAsync(CategoryDto dto);
-        Task<HttpResponseMessage> RemoveAsync(int id);
+        Task<HttpResponseMessage> UpdateAsync(CategoryDto dto, string token);
+        Task<HttpResponseMessage> RemoveAsync(int id, string token);
     }
 }

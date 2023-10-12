@@ -45,9 +45,30 @@ namespace Onion.JwtApp.Persistance
                 opt.Lockout.MaxFailedAccessAttempts = 5;
 
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
-            #endregion
+			#endregion
 
-           
-        }
-    }
+			#region JWT
+			service.AddAuthentication(options =>
+			{
+				options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+				options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+				options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+			}).AddJwtBearer(cfg =>
+			{
+				cfg.RequireHttpsMetadata = false; //Https olmasin.
+				cfg.SaveToken = true;
+				cfg.TokenValidationParameters = new TokenValidationParameters
+				{
+					ValidIssuer = configuration["Jwt:Issuer"],
+					ValidAudience = configuration["Jwt:Audince"],
+					IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),
+
+					ClockSkew = TimeSpan.Zero  // remove delay of token when expire
+				};
+			});
+
+			#endregion
+		}
+	}
 }

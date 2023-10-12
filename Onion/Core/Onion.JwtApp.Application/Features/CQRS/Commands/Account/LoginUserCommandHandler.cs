@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Onion.JwtApp.Application.Features.CQRS.Commands.Account
 {
-    public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, IResponse<TokenResponseDto>>
+    public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest,TokenResponseDto?>
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
@@ -23,65 +23,35 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.Account
             _tokenService = tokenService;
         }
 
-        public async Task<IResponse<TokenResponseDto>> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
-        {
-            if (request.EmailorUsername != null)
-            {
-                var user = new AppUser();
+		public async Task<TokenResponseDto?> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
+		{
 
-                user = await _userManager.FindByEmailAsync(request.EmailorUsername);
-                if (user == null)
-                    user = await _userManager.FindByNameAsync(request.EmailorUsername);
+			if (request.EmailorUsername != null)
+			{
+				var user = new AppUser();
 
-                if (user != null && request.Password != null && user.UserName != null)
-                {
-                    if (await _userManager.CheckPasswordAsync(user, request.Password))
-                    {
-                        var roles = await _userManager.GetRolesAsync(user);
+				user = await _userManager.FindByEmailAsync(request.EmailorUsername);
+				if (user == null)
+					user = await _userManager.FindByNameAsync(request.EmailorUsername);
 
-                        var token = _tokenService.GenerateJwtToken(user.UserName, (List<string>)roles);
+				if (user != null && request.Password != null && user.UserName != null)
+				{
+					if (await _userManager.CheckPasswordAsync(user, request.Password))
+					{
+						var roles = await _userManager.GetRolesAsync(user);
 
-                        return new Response<TokenResponseDto>("200", token);
-                    }
+						var token = _tokenService.GenerateJwtToken(user.UserName, (List<string>)roles);
 
-                    return new Response<TokenResponseDto>("401", new TokenResponseDto("Token is null", DateTime.UtcNow.AddDays(1)), "Unauthorized");
-                }
+						return token;
+					}
 
-                return new Response<TokenResponseDto>("404", new TokenResponseDto("Token is null", DateTime.UtcNow.AddDays(1)),"User is null");
-            }
+					//throw new UnauthorizedAccessException();
+				}
 
-            return new Response<TokenResponseDto>("404", new TokenResponseDto("Token is null", DateTime.UtcNow.AddDays(1)));
-        }
+				//throw new NullReferenceException();
+			}
 
-        //public async Task<TokenResponseDto> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
-        //{
-
-        //    if (request.EmailorUsername != null)
-        //    {
-        //        var user = new AppUser();
-
-        //        user = await _userManager.FindByEmailAsync(request.EmailorUsername);
-        //        if (user == null)
-        //            user = await _userManager.FindByNameAsync(request.EmailorUsername);
-
-        //        if (user != null && request.Password != null && user.UserName != null)
-        //        {
-        //            if (await _userManager.CheckPasswordAsync(user,request.Password))
-        //            {
-        //                var roles = await _userManager.GetRolesAsync(user);
-
-        //                var token = _tokenService.GenerateJwtToken(user.UserName, (List<string>)roles);
-
-        //                return token;
-        //            }
-
-        //            throw new UnauthorizedAccessException();
-        //        }
-
-        //        throw new NullReferenceException();
-        //    }
-
-        //    throw new NullReferenceException();
-        //}
-    }
+			return new TokenResponseDto("null", DateTime.Now);
+		}
+	}
 }

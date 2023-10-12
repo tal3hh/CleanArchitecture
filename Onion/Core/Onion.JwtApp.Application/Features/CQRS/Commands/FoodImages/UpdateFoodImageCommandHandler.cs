@@ -31,23 +31,24 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
 
                 if (unchange != null)
                 {
-                    string oldpath = Path.Combine(_env.WebRootPath, "FoodImages", unchange.Image);
+                    //string oldpath = Path.Combine(_env.WebRootPath, "FoodImages", unchange.Image);
 
-                    if (File.Exists(oldpath))
-                    {
-                        File.Delete(oldpath);
-                    }
-                    else
-                    {
-                        return new Response("404", "Photo not exists");
-                    }
+                    //if (File.Exists(oldpath))
+                    //{
+                    //    File.Delete(oldpath);
+                    //}
+                    //else
+                    //{
+                    //    return new Response("404", "Photo not exists");
+                    //}
 
                     string filename = Guid.NewGuid() + "_" + request.Photo.Name;
-                    string NewPath = _env.WebRootPath + "FoodImages" + filename;
-                    using (FileStream stream = new FileStream(NewPath, FileMode.Create))
-                    {
-                        await request.Photo.CopyToAsync(stream);
-                    }
+
+                    //string NewPath = _env.WebRootPath + "FoodImages" + filename;
+                    //using (FileStream stream = new FileStream(NewPath, FileMode.Create))
+                    //{
+                    //    await request.Photo.CopyToAsync(stream);
+                    //}
 
                     var entity = unchange;
                     entity.Image = filename;

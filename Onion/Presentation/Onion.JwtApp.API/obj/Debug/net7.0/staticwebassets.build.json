@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gxXJuW5dLed8ipZAo77IpKuSLB+6AcdqugX0saBKsPY=",
+  "Hash": "31P8/ifBEJ98ei44LkzItDLCSCLEQMUTxEYqofuL/dQ=",
   "Source": "Onion.JwtApp.API",
   "BasePath": "_content/Onion.JwtApp.API",
   "Mode": "Default",
@@ -15,40 +15,5 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\589cc906-69f0-4b0f-9ce3-6ad24bd3b08e_Screenshot (11).png",
-      "SourceId": "Onion.JwtApp.API",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\",
-      "BasePath": "_content/Onion.JwtApp.API",
-      "RelativePath": "FoodImages/589cc906-69f0-4b0f-9ce3-6ad24bd3b08e_Screenshot (11).png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FoodImages\\589cc906-69f0-4b0f-9ce3-6ad24bd3b08e_Screenshot (11).png"
-    },
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\FoodImages\\69b5bec7-4419-4327-a316-c81cc7d799e1_Screenshot (9).png",
-      "SourceId": "Onion.JwtApp.API",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\Udemy\\OnionJwtApp\\Onion\\Presentation\\Onion.JwtApp.API\\wwwroot\\",
-      "BasePath": "_content/Onion.JwtApp.API",
-      "RelativePath": "FoodImages/69b5bec7-4419-4327-a316-c81cc7d799e1_Screenshot (9).png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FoodImages\\69b5bec7-4419-4327-a316-c81cc7d799e1_Screenshot (9).png"
-    }
-  ]
+  "Assets": []
 }

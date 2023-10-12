@@ -21,9 +21,7 @@ C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj\Debug\net7.0\staticwebassets.development.json
-C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj\Debug\net7.0\scopedcss\bundle\Onion.JwtApp.WebApp.styles.css
-C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj\Debug\net7.0\scopedcss\projectbundle\Onion.JwtApp.WebApp.bundle.scp.css
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj\Debug\net7.0\Onion.JwtApp.WebApp.dll
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj\Debug\net7.0\refint\Onion.JwtApp.WebApp.dll
 C:\Users\HP\Desktop\Udemy\OnionJwtApp\Onion\Presentation\Onion.JwtApp.WebApp\obj\Debug\net7.0\Onion.JwtApp.WebApp.pdb

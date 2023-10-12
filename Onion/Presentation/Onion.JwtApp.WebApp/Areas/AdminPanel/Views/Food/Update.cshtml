@@ -1,0 +1,59 @@
+﻿@model (FoodUpdateDto food, List<CategoryDto> categories)
+
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yemek Yenile</h4> <br />
+                <hr />
+                <form asp-action="Update" asp-controller="Food" asp-area="AdminPanel" class="form-sample" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Yemek Adi :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="food.Name" type="text" class="form-control" placeholder="Yemek adini yazin..." />
+                                    <span asp-validation-for="food.Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Kateqoriya :</label>
+                                <div class="col-sm-9">
+                                    <select asp-for="food.CategoryId" asp-items="@(new SelectList(Model.categories,"Id","Name"))" class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Qiymet :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="food.Price" type="number" class="form-control" />
+                                    <span asp-validation-for="food.Price" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Edviyyatlar :</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="food.Definition" type="text" class="form-control" />
+                                    <span asp-validation-for="food.Definition" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" asp-for="food.Id"/>
+                    <button type="submit" class="btn btn-success mr-2">Yenile</button>
+                    <a asp-action="List" asp-controller="Food" asp-area="AdminPanel" class="btn btn-light">Geri</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

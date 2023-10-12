@@ -39,10 +39,10 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.Account
             {
                 await _roleManager.CreateAsync(new IdentityRole
                 {
-                    Name = "Member"
+                    Name = "SuperAdmin"
                 });
 
-                await _userManager.AddToRoleAsync(user, "Member");
+                await _userManager.AddToRoleAsync(user, "SuperAdmin");
 
                 return new Response("201","Create user");
             }

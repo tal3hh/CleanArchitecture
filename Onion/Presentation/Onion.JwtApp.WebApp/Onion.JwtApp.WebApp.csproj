@@ -15,4 +15,8 @@
     <ProjectReference Include="..\..\Core\Onion.JwtApp.Application\Onion.JwtApp.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+
 </Project>

@@ -19,8 +19,7 @@ namespace Onion.JwtApp.API.Controllers
             _mediatr = mediatro;
         }
 
-        
-        [HttpGet]
+		[HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var result = await _mediatr.Send(new GetCategoriesQueryRequest());
@@ -36,7 +35,8 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
+		[Authorize(Roles = "SuperAdmin,Admin")]
+		[HttpPost]
         public async Task<IActionResult> Create(CreateCategoryCommandRequest request)
         {
             if (!ModelState.IsValid) return BadRequest();
@@ -46,7 +46,8 @@ namespace Onion.JwtApp.API.Controllers
             return Ok("Created data...");
         }
 
-        [HttpPut]
+		[Authorize(Roles = "SuperAdmin")]
+		[HttpPut]
         public async Task<IActionResult> Update(UpdateCategoryCommandRequest request)
         {
             if (!ModelState.IsValid) return BadRequest();
@@ -56,7 +57,8 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(response);
         }
 
-        [HttpDelete("{id}")]
+		[Authorize(Roles = "SuperAdmin")]
+		[HttpDelete("{id}")]
         public async Task<IActionResult> Remove(int id)
         {
             var response =  await _mediatr.Send(new RemoveCategoryCommandRequest(id));

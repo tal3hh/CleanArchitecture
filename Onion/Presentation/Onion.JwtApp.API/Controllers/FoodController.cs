@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Onion.JwtApp.Application.Features.CQRS.Commands.Category;
@@ -35,7 +36,8 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
+		[Authorize(Roles = "SuperAdmin,Admin")]
+		[HttpPost]
         public async Task<IActionResult> Create(CreateFoodCommandRequest request)
         {
             if(!ModelState.IsValid) return BadRequest();
@@ -46,7 +48,8 @@ namespace Onion.JwtApp.API.Controllers
 
         }
 
-        [HttpPut]
+		[Authorize(Roles = "SuperAdmin")]
+		[HttpPut]
         public async Task<IActionResult> Update(UpdateFoodCommandRequest request)
         {
             if (!ModelState.IsValid) return BadRequest();
@@ -56,8 +59,8 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(response);
         }
 
-
-        [HttpDelete("{id}")]
+		[Authorize(Roles = "SuperAdmin")]
+		[HttpDelete("{id}")]
         public async Task<IActionResult> Remove(int id)
         {
             var response = await _mediator.Send(new RemoveFoodCommandRequest(id));

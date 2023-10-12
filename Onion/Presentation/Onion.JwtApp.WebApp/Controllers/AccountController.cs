@@ -67,9 +67,10 @@ namespace Onion.JwtApp.WebApp.Controllers
 			if (response.IsSuccessStatusCode)
 			{
 				var jsonData = await response.Content.ReadAsStringAsync();
-				var tokenmodel = System.Text.Json.JsonSerializer.Deserialize<JwtTokenResponseDto>(jsonData, new JsonSerializerOptions
+				var tokenmodel = System.Text.Json.JsonSerializer.Deserialize<TokenResponseDto>(jsonData, new JsonSerializerOptions
 				{
 					PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+					
 				});
 
 				if (tokenmodel?.Token != null)
@@ -78,6 +79,7 @@ namespace Onion.JwtApp.WebApp.Controllers
 					var token = handler.ReadJwtToken(tokenmodel.Token);
 
 					var claims = token.Claims.ToList();
+
 					if (tokenmodel.Token != null)
 						claims.Add(new Claim("RestorantToken", tokenmodel.Token));
 
@@ -92,6 +94,7 @@ namespace Onion.JwtApp.WebApp.Controllers
 
 					return RedirectToAction("Index", "Home");
 				}
+
 				ModelState.AddModelError("", "Service Error");
 			}
 			else
@@ -99,6 +102,18 @@ namespace Onion.JwtApp.WebApp.Controllers
 				ModelState.AddModelError("", "Username and password is wrong");
 			}
 
+			return View();
+		}
+
+
+		public async Task<IActionResult> Logout()
+		{
+			await HttpContext.SignOutAsync();
+			return RedirectToAction("Index", "Home");
+		}
+
+		public IActionResult AccessDenied()
+		{
 			return View();
 		}
 	}

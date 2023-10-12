@@ -38,12 +38,13 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
                         if (photo.ContentType.Contains("image/"))
                         {
                             string fileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
-                            string path = Path.Combine(_env.WebRootPath, "FoodImages", fileName);
 
-                            using (FileStream stream = new FileStream(path, FileMode.Create))
-                            {
-                                await photo.CopyToAsync(stream);
-                            }
+                            //string path = Path.Combine(_env.WebRootPath, "FoodImages", fileName);
+
+                            //using (FileStream stream = new FileStream(path, FileMode.Create))
+                            //{
+                            //    await photo.CopyToAsync(stream);
+                            //}
 
                             var FoodImage = new FoodImage
                             {

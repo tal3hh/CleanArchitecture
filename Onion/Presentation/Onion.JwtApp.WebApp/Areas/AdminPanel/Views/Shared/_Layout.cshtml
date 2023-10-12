@@ -27,10 +27,10 @@
     <nav class="t-header">
         <div class="t-header-brand-wrapper">
             <a asp-action="Index" asp-controller="Home">
-                <h3 class="text-dark">VTP'23</h3>
+                <h3 class="text-dark">Restorant App</h3>
             </a>
         </div>
-        <div class="t-header-content-wrapper" style="background-color: #c5c8cc">
+        <div class="t-header-content-wrapper">
             <div class="t-header-content">
                 <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
                     <i class="mdi mdi-menu"></i>
@@ -51,27 +51,28 @@
 
         <div class="sidebar">
             <div class="user-profile">
-                <div class="info-wrapper">
+               <p>
                     @{
                         if (User.Identity.IsAuthenticated)
                         {
                             <h6 class="display-income">@User.Identity.Name</h6>
                         }
                     }
-                </div>
+               </p>
             </div>
             <ul class="navigation-menu">
                 <li class="nav-category-divider">MAIN</li>
+
                 <li>
-                    <a asp-action="Index" asp-controller="Dashboard">
-                        <span class="link-title" style="color:black">Dashboard</span>
+                    <a asp-action="Index" asp-controller="Home" asp-area="">
+                        <span class="link-title" style="color:black">Ana Sehife</span>
                         <i class="mdi mdi-gauge link-icon"></i>
                     </a>
                 </li>
 
                 <li>
                     <a asp-action="List" asp-controller="Category">
-                        <span class="link-title" style="color:black">Categories</span>
+                        <span class="link-title" style="color:black">Kateqoriyalar</span>
                         <i class="mdi mdi-gauge link-icon"></i>
                     </a>
                 </li>
@@ -80,82 +81,27 @@
 
                 <li>
                     <a asp-action="List" asp-controller="Food">
-                        <span class="link-title" style="color:black">Foods</span>
+                        <span class="link-title" style="color:black">Yemekler</span>
                         <i class="mdi mdi-gauge link-icon"></i>
                     </a>
                 </li>
-                @*<li>
-                    <a href="#ui-elements" data-toggle="collapse" aria-expanded="false">
-                        <span class="link-title">Foods</span>
-                        <i class="mdi mdi-bullseye link-icon"></i>
-                    </a>
-                    <ul class="collapse navigation-submenu" id="ui-elements">
-                        <li>
-                            <a asp-action="List" asp-controller="ALL">ALL</a>
-                        </li>
-                        <li>
-                            <a asp-action="List" asp-controller="IT">IT Web</a>
-                        </li>
-                        <li>
-                            <a asp-action="List" asp-controller="RM">RM</a>
-                        </li>
-                        <li>
-                            <a asp-action="List" asp-controller="ACC">ACC</a>
-                        </li>
-                        <li>
-                            <a asp-action="List" asp-controller="LP">LP</a>
-                        </li>
-                        <li>
-                            <a asp-action="List" asp-controller="HR">HR</a>
-                        </li>
-                        <li>
-                            <a asp-action="List" asp-controller="IM">IM</a>
-                        </li>
-                    </ul>
-                </li>*@
 
-                <!-- CHART -->
-                <li>
-                    <a asp-action="List" asp-controller="Contact">
-                        <span class="link-title" style="color:black">Contact</span>
-                        <i class="mdi mdi-chart-donut link-icon"></i>
-                    </a>
-                </li>
-
-                @*@{
-                    if (!User.Identity.IsAuthenticated)
+                @{
+                    if (User.Identity.IsAuthenticated)
                     {
                         <li>
-                            <a asp-action="Login" asp-controller="Account">
-                                <span class="link-title">Login</span>
-                                <i class="mdi mdi-chart-donut link-icon"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a asp-action="Register" asp-controller="Account">
-                                <span class="link-title">Register</span>
+                            <a asp-action="Logout" asp-controller="Account" asp-area="">
+                                <span class="link-title" style="color:black">Cixis</span>
                                 <i class="mdi mdi-chart-donut link-icon"></i>
                             </a>
                         </li>
                     }
-                    else
-                    {
-                        <li>
-                            <a asp-action="LogOut" asp-controller="Account">
-                                <span class="link-title">LogOut</span>
-                                <i class="mdi mdi-chart-donut link-icon"></i>
-                            </a>
-                        </li>
-                    }
-                }*@
-
-
-
+                }
 
             </ul>
         </div>
 
-        <div class="page-content-wrapper" style="background-color: #c5c8cc">
+        <div class="page-content-wrapper" >
 
 
             @RenderBody()

@@ -28,22 +28,22 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
 
             if (list.Count() > 0)
             {
-                var notexists = 0;
+                //var notexists = 0;
                 foreach (var item in list)
                 {
-                    var path = Path.Combine(_env.WebRootPath, "FoodImages", item.Image);
+                    //var path = Path.Combine(_env.WebRootPath, "FoodImages", item.Image);
 
-                    if (File.Exists(path))
-                    {
-                        File.Delete(path);
-                    }
-                    else
-                    {
-                        notexists++;
-                    }
+                    //if (File.Exists(path))
+                    //{
+                    //    File.Delete(path);
+                    //}
+                    //else
+                    //{
+                    //    notexists++;
+                    //}
 
                     await _repo.Remove(item);
-                    return new Response("200", $"Images removed, Exists not image count:{notexists}");
+                    return new Response("200", $"Images removed");
                 }
             }
 

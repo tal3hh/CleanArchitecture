@@ -28,12 +28,12 @@ namespace Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages
 
             if (entity != null)
             {
-                var path = Path.Combine(_env.WebRootPath, "FoodImages", entity.Image);
+                //var path = Path.Combine(_env.WebRootPath, "FoodImages", entity.Image);
 
-                if (File.Exists(path))
-                {
-                    File.Delete(path);
-                }
+                //if (File.Exists(path))
+                //{
+                //    File.Delete(path);
+                //}
 
                 await _repo.Remove(entity);
                 return new Response("200", "Entity remove");

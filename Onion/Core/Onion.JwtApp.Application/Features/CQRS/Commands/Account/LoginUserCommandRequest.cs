@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Onion.JwtApp.Application.Features.CQRS.Commands.Account
 {
-    public class LoginUserCommandRequest : IRequest<IResponse<TokenResponseDto>>
+    public class LoginUserCommandRequest : IRequest<TokenResponseDto?>
     {
         public string? EmailorUsername { get; set; }
         public string? Password { get; set; }

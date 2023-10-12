@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Onion.JwtApp.Application.Features.CQRS.Commands.FoodImages;
 using Onion.JwtApp.Application.Features.CQRS.Queries.FoodImages;
@@ -25,14 +26,15 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(result);
         }
 
-        [HttpPost("Multi")]
-        public async Task<IActionResult> Create(IFormFileCollection photos, int FoodId)
+		//[Authorize(Roles = "SuperAdmin,Admin")]
+		[HttpPost("Multi/{foodid}")]
+        public async Task<IActionResult> Create(int foodid, IFormFileCollection photos)
         {
             if(photos.Count() == 0) return BadRequest("Sekil secin");
 
             var request = new CreateFoodImageCommandRequest
             {
-                FoodId = FoodId,
+                FoodId = foodid,
                 Photos = photos
             };
 
@@ -41,7 +43,8 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(response);
         }
 
-        [HttpPut]
+		//[Authorize(Roles = "SuperAdmin")]
+		[HttpPut]
         public async Task<IActionResult> Update(IFormFile photo, int id)
         {
             var request = new UpdateFoodImageCommandRequest
@@ -55,8 +58,8 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(response);
         }
 
-
-        [HttpDelete("{id}")]
+		//[Authorize(Roles = "SuperAdmin")]
+		[HttpDelete("{id}")]
         public async Task<IActionResult> Remove(int id)
         {
             var response = await _mediator.Send(new RemoveFoodImageCommandRequest(id));
@@ -64,7 +67,8 @@ namespace Onion.JwtApp.API.Controllers
             return Ok(response);
         }
 
-        [HttpDelete("Multi/{FoodId}")]
+		//[Authorize(Roles = "SuperAdmin")]
+		[HttpDelete("Multi/{FoodId}")]
         public async Task<IActionResult> AllRemove(int FoodId)
         {
             var response = await _mediator.Send(new RemoveFoodImagesCommandRequest(FoodId));
